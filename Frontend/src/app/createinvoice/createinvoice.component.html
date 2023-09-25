@@ -1,0 +1,30 @@
+ 
+<div class="container-fluid">
+    <app-header></app-header>
+</div>
+<table class="table table-bordered table-hover">
+    <thead>
+        <th>Sr No</th>
+        <th>Amount Due</th>
+        <th>Bill due date</th>
+        <th>Customer Name</th>
+         <th>Payment Status</th> 
+    </thead>
+    <tbody>
+  
+            <tr (click)="onClick(item)" *ngFor="let item of invoiceData;index as i"
+        [ngClass]="{
+            'highlight':item.amountDue===selected
+        }"
+        >
+            <td> {{i+1}} </td>
+            <td> {{item.amountDue}} </td>
+            <td [ngClass]="{
+                'priceHighlight':item.amountDue===selected
+            }" 
+            > {{item.dueDate | date:'dd-MM-yyyy'}} </td>
+            <td> {{item.customer.name}} </td> 
+            <td>{{item.paymentStatus}}</td>
+        </tr>
+    </tbody>
+</table>
