@@ -1,0 +1,42 @@
+ 
+<div class="container-fluid">
+    <app-header></app-header>
+</div>
+<div><button  class="btn btn-success" style="margin: 10px;" (click)="onAddInvoice()">Add Invoice</button>
+    
+</div>
+<table class="table table-bordered table-hover" style="cursor: pointer;">
+    <thead>
+        <th>Sr No</th>
+        <th>Customer Id</th>
+        <th>Amount Due</th>
+        <th>Bill due date</th>
+        <th>Customer Name</th>
+         <th>Payment Status</th> 
+         <th>Add Payment</th>
+    </thead>
+    <tbody>
+  
+            <tr (click)="onClick(item)" *ngFor="let item of invoiceData;index as i"
+        [ngClass]="{
+            'highlight':item.amountDue===selected
+        }"
+        >
+            <td> {{i+1}} </td>
+            <td>{{customerId}}</td>
+            <td> {{item.amountDue}} </td>
+            <td [ngClass]="{
+                'priceHighlight':item.amountDue===selected
+            }" 
+            > {{item.dueDate | date:'dd-MM-yyyy'}} </td>
+            <td> {{item.customer.name}} </td> 
+           <td class="text-center">
+                <span [ngClass]="{'badge badge-success': item.paymentStatus === 'PAID', 'badge badge-danger': item.paymentStatus !== 'PAID'}">
+                    {{ (item.paymentStatus === 'PAID' ? item.paymentStatus : 'NOT PAID') | lowercase }}
+                </span>
+            </td>
+              <td><button  class="btn btn-info" style="margin: 10px;" (click)="onAddPayment(item)">Add Payment</button></td>
+            
+        </tr>
+    </tbody>
+</table>

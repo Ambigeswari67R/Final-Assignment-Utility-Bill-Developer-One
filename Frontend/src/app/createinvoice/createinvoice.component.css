@@ -1,0 +1,45 @@
+/* Center-align table headers and cells */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Add padding and background color to the table headers */
+  th {
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+  
+  /* Style the "highlight" class */
+  tr.highlight {
+    background-color: #ffff99;
+  }
+  
+  /* Style the "priceHighlight" class */
+  td.priceHighlight {
+    background-color: #ffcc00;
+  }
+  
+  /* Style the payment status badges */
+  td .badge {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 10px;
+  }
+  
+  td .badge-success {
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 5px 10px;
+  }
+  
+  td .badge-danger {
+    background-color: #d9534f;
+    color: #fff;
+  }
+  

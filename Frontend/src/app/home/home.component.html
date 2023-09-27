@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <app-header></app-header>
+    <div class="row">
+        <div class="col">
+            <br>
+            <div>
+                <button  class="btn btn-success" style="margin-right: 10px;" (click)="onAdd()">Add Customer</button>
+               
+                
+                
+            </div>
+            <br>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <th>Customer Id</th>
+                    <th>Name</th>
+                    <th>Unit Consumption</th>
+                    <th>Bill due date</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Invoice</th>
+                    
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of customerData | paginate: { itemsPerPage: 10, currentPage: p };index as i">
+                        <td> {{item.customerId}} </td>
+                        <td> {{item.name}} </td>
+                        <td> {{item.unitConsumed}} </td>
+                        <td> {{item.billDueDate}} </td>
+                        <td> {{item.email}} </td>
+                        <td> {{item.telephone}} </td>
+                        <td><button  class="btn btn-info" (click)="onAddInvoice(item)">Invoice</button></td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="p = $event" class="pull-right"></pagination-controls>
+        </div>
+    </div>
+ 
+</div>

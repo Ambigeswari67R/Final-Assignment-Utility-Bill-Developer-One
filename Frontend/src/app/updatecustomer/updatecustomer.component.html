@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <app-header></app-header>
+</div> 
+<div style="margin: 5px;padding: 5px;">
+    
+    <div class="form-group">
+        <label for="">ID </label>
+        <input type="text" class="form-control" 
+         placeholder="Enter the id"
+           readonly>
+    </div>
+    <div class="form-group">
+        <label for="">Customer Name </label>
+        <input type="text" class="form-control" 
+         placeholder="Enter the Name"
+         >
+    </div>
+    <div class="form-group">
+        <label for="">Unit Consumed </label>
+        <input type="text" class="form-control"  placeholder="Enter the Unit Consumed "
+         >
+    </div>
+    <div class="form-group">
+        <label for="">Due Date</label>
+        <input type="text" class="form-control"  placeholder="Enter the Due date "
+         >
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control"  placeholder="Enter the email"
+         >
+    </div>
+    
+    <div class="form-group">
+        <label for="">Telephone</label>
+        <input type="text" class="form-control"  placeholder="Enter the Telephone"
+         >
+    </div>
+    <hr>
+    <div class="form-group">
+        <button class="btn btn-success" 
+        [disabled]="!issubmitDissabled">Submit</button>
+        <br><br> 
+        <span class="alert alert-success" 
+        [hidden]="issubmitDissabled"> {{backendResponse}} </span>
+    </div>
+</div>

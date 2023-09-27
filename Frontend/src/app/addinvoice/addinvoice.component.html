@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <app-header></app-header>
+</div>
+<div class="container">
+  <form class="login-form" id="custForm">
+      <h2>ADD Customer</h2>
+      
+
+      <div class="form-group">
+          <label for="unitConsumed">unit consumed</label>
+           <input type="text" id="unitConsumed" name="unitConsumed"  class="form-control" #unitConsumed required>
+      </div>
+      <div class="form-group">
+          <label for="billDueDate">bill due date</label>
+           <input type="text" id="billDueDate" name="billDueDate"  class="form-control" #billDueDate required>
+      </div>
+      
+      
+      <button type="button" class="btn btn-primary" (click)="addCustomerinvoice(unitConsumed.value,billDueDate.value)">SUBMIT</button>
+      
+  </form>
+  <br><br>
+  
+</div>
+

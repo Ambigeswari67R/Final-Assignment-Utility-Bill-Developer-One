@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <app-header></app-header>
+</div>
+<div class="container">
+  <form class="login-form" id="custForm">
+      <h2>ADD Customer</h2>
+      
+      <div class="form-group">
+          <label for="name">name</label>
+           <input type="text" id="name" name="name"  class="form-control" #name required>
+           
+      </div>
+      <div class="form-group">
+          <label for="unitConsumed">unit consumed</label>
+           <input type="text" id="unitConsumed" name="unitConsumed"  class="form-control" #unitConsumed required>
+      </div>
+      <div class="form-group">
+          <label for="billDueDate">bill due date</label>
+           <input type="text" id="billDueDate" name="billDueDate"  class="form-control" #billDueDate required>
+      </div>
+      <div class="form-group">
+          <label for="email">email</label>
+           <input type="text" id="email" name="email"  class="form-control" #email required>
+      </div>
+      <div class="form-group">
+          <label for="telephone">telephone</label>
+           <input type="text" id="telephone" name="telephone"  class="form-control" #telephone required>
+      </div>
+      
+      <button type="button" class="btn btn-primary" (click)="addCustomer(name.value,unitConsumed.value,billDueDate.value,email.value,telephone.value)">SUBMIT</button>
+      
+  </form>
+  <br><br>
+  <form name="file" method="POST" action="/api/csv/upload" enctype="multipart/form-data">
+    <label>Select File</label> <br />
+    <input type="file" name="file" />
+    <input type="submit" name="submit" value="Upload" />
+    </form>
+</div>
+
